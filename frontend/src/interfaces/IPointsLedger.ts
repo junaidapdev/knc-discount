@@ -1,13 +1,15 @@
 export interface IPointsLedger {
   id: string
-  supplierId: string
-  supplierName: string
-  period: string
-  openingBalance: number
-  earned: number
-  redeemed: number
-  closingBalance: number
-  notes: string | null
-  createdAt: string
-  updatedAt: string
+  supplier_id: string | null
+  item_description: string
+  points_earned: number
+  redeemed: boolean
+  redeemed_for: string | null
+  created_at: string
+}
+
+export interface IPointsLedgerWithSupplier extends IPointsLedger {
+  suppliers: {
+    name: string
+  } | null
 }

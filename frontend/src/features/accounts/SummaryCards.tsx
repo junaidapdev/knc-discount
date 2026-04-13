@@ -1,13 +1,9 @@
 import { TrendingDown, TrendingUp, Clock, AlertTriangle, DollarSign } from 'lucide-react'
-import { CURRENCY } from '../../constants/appConstants'
+import { formatAmount } from '../../lib/formatters'
 import type { AuditSummary } from '../../hooks/useAuditSummary'
 
 interface SummaryCardsProps {
   summary: AuditSummary
-}
-
-function formatAmount(value: number): string {
-  return `${value.toLocaleString(CURRENCY.LOCALE, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${CURRENCY.SYMBOL}`
 }
 
 interface CardDef {
@@ -52,7 +48,7 @@ export default function SummaryCards({ summary }: SummaryCardsProps) {
   ]
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16, marginBottom: 24 }}>
+    <div className="grid-5-cols">
       {cards.map((card) => (
         <div
           key={card.label}

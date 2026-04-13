@@ -25,7 +25,11 @@ export const ERROR_MESSAGES = {
 
   // Analytics
   ANALYTICS_LOAD_FAILED: 'Failed to load analytics data.',
+  TARGET_LOAD_FAILED: 'Failed to load target progress data.',
+  POINTS_LOAD_FAILED: 'Failed to load points ledger.',
+  POINTS_CREATE_FAILED: 'Failed to create points entry.',
   POINTS_UPDATE_FAILED: 'Failed to update points ledger.',
+  POINTS_DELETE_FAILED: 'Failed to delete points entry.',
 
   // Credit Note validation
   PERIOD_END_BEFORE_START: 'Period end date must be after start date.',

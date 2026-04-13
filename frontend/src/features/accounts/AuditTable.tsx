@@ -4,7 +4,8 @@ import { useAuth } from '../../hooks/useAuth'
 import Button from '../../components/Button'
 import StatusBadge from '../../components/StatusBadge'
 import OverdueBadge from './OverdueBadge'
-import { DATE_FORMAT, CURRENCY, CREDIT_NOTE_STATUS, CREDIT_NOTE_STATUS_LABELS, OVERDUE_THRESHOLD_DAYS, type CreditNoteStatus } from '../../constants/appConstants'
+import { DATE_FORMAT, CREDIT_NOTE_STATUS, CREDIT_NOTE_STATUS_LABELS, OVERDUE_THRESHOLD_DAYS, type CreditNoteStatus } from '../../constants/appConstants'
+import { formatAmount } from '../../lib/formatters'
 import type { ICreditNoteWithSupplier } from '../../interfaces/ICreditNote'
 
 interface AuditTableProps {
@@ -12,9 +13,6 @@ interface AuditTableProps {
   onEdit: (note: ICreditNoteWithSupplier) => void
 }
 
-function formatAmount(value: number): string {
-  return `${value.toLocaleString(CURRENCY.LOCALE, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${CURRENCY.SYMBOL}`
-}
 
 function statusVariant(status: CreditNoteStatus): 'success' | 'warning' | 'error' {
   if (status === CREDIT_NOTE_STATUS.RECEIVED) return 'success'

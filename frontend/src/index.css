@@ -18,3 +18,48 @@ a {
   0%   { background-position: -200% 0; }
   100% { background-position:  200% 0; }
 }
+
+/* -------------------------------------------------------
+   Responsive grid helpers
+   Used by summary card grids across all pages
+------------------------------------------------------- */
+.grid-5-cols {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1024px) {
+  .grid-5-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-5-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-5-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Page main padding on small screens */
+@media (max-width: 768px) {
+  main {
+    padding: 16px !important;
+  }
+
+  header {
+    padding: 0 16px !important;
+  }
+
+  nav {
+    padding: 0 8px !important;
+    overflow-x: auto;
+  }
+}

@@ -2,7 +2,8 @@ import { useState, useEffect, useCallback } from 'react'
 import Modal from '../../components/Modal'
 import Button from '../../components/Button'
 import { creditNoteSchema } from '../../validations/creditNoteSchema'
-import { CREDIT_NOTE_STATUS, CREDIT_NOTE_STATUS_LABELS, CURRENCY, type CreditNoteStatus } from '../../constants/appConstants'
+import { CREDIT_NOTE_STATUS, CREDIT_NOTE_STATUS_LABELS, type CreditNoteStatus } from '../../constants/appConstants'
+import { formatAmount } from '../../lib/formatters'
 import type { ISupplier } from '../../interfaces/ISupplier'
 import type { ICreditNoteWithSupplier } from '../../interfaces/ICreditNote'
 import type { CreditNoteCreateData } from '../../hooks/useCreditNotes'
@@ -33,9 +34,6 @@ const STATUS_OPTIONS: { value: CreditNoteStatus; label: string }[] = [
   { value: CREDIT_NOTE_STATUS.DISPUTED, label: CREDIT_NOTE_STATUS_LABELS.disputed },
 ]
 
-function formatAmount(value: number): string {
-  return `${value.toLocaleString(CURRENCY.LOCALE, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${CURRENCY.SYMBOL}`
-}
 
 export default function CreditNoteModal({ open, onClose, onSubmit, suppliers, editing }: CreditNoteModalProps) {
   const [form, setForm] = useState({

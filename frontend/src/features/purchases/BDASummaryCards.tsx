@@ -1,13 +1,9 @@
 import { TrendingUp, Target, AlertTriangle } from 'lucide-react'
-import { CURRENCY } from '../../constants/appConstants'
+import { formatAmount } from '../../lib/formatters'
 import type { SupplierTotal } from '../../hooks/useSupplierTotals'
 
 interface BDASummaryCardsProps {
   totals: SupplierTotal[]
-}
-
-function formatAmount(value: number): string {
-  return `${value.toLocaleString(CURRENCY.LOCALE, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${CURRENCY.SYMBOL}`
 }
 
 export default function BDASummaryCards({ totals }: BDASummaryCardsProps) {

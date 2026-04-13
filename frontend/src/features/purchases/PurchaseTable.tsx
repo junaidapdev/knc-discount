@@ -3,9 +3,10 @@ import { Pencil, Trash2, ArrowUpDown } from 'lucide-react'
 import { format, parseISO } from 'date-fns'
 import { useAuth } from '../../hooks/useAuth'
 import Button from '../../components/Button'
-import { DATE_FORMAT, CURRENCY } from '../../constants/appConstants'
+import { DATE_FORMAT } from '../../constants/appConstants'
 import { BDA_CATEGORY_LABELS, type BDACategory } from '../../constants/bdaRules'
 import { computeSupplierBDA } from '../../lib/bdaCalculator'
+import { formatAmount } from '../../lib/formatters'
 import type { IPurchaseOrderWithSupplier } from '../../interfaces/IPurchaseOrder'
 import type { ISupplier } from '../../interfaces/ISupplier'
 
@@ -19,9 +20,6 @@ interface PurchaseTableProps {
   onDelete: (id: string) => void
 }
 
-function formatAmount(value: number): string {
-  return `${value.toLocaleString(CURRENCY.LOCALE, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${CURRENCY.SYMBOL}`
-}
 
 export default function PurchaseTable({ orders, suppliers, onEdit, onDelete }: PurchaseTableProps) {
   const { canEdit } = useAuth()

@@ -2,7 +2,7 @@ export const APP_NAME = 'KNC Discount'
 
 export const TAB_LABELS = {
   PURCHASES: 'Purchases',
-  AUDIT: 'Audit',
+  AUDIT: 'Accounts',
   ANALYTICS: 'Analytics',
 } as const
 
@@ -48,3 +48,8 @@ export const CREDIT_NOTE_STATUS_LABELS: Record<CreditNoteStatus, string> = {
 } as const
 
 export const OVERDUE_THRESHOLD_DAYS = 60 as const
+
+export const TARGET_ALERT_THRESHOLD_PERCENT = 75 as const
+export const TARGET_NEAR_PERCENT = 95 as const
+
+export const POINTS_DESCRIPTION_MAX_LENGTH = 200 as const
