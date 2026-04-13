@@ -20,9 +20,12 @@ export const PAGINATION = {
 export const DATE_FORMAT = 'dd MMM yyyy' as const
 
 export const CURRENCY = {
-  CODE: 'USD',
-  LOCALE: 'en-US',
+  CODE: 'SR',
+  LOCALE: 'en-SA',
+  SYMBOL: 'SR',
 } as const
+
+export const NOTES_MAX_LENGTH = 500 as const
 
 export const REBATE_STATUS = {
   PENDING: 'pending',

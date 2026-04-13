@@ -1,17 +1,16 @@
 export interface IPurchaseOrder {
   id: string
-  poNumber: string
-  supplierId: string
-  supplierName: string
-  orderDate: string
-  deliveryDate: string | null
-  totalAmount: number
-  currency: string
-  status: 'draft' | 'confirmed' | 'delivered' | 'cancelled'
-  bdaPercentage: number
-  expectedRebate: number
+  supplier_id: string
+  order_date: string
+  purchase_amount: number
+  bda_category: string
   notes: string | null
-  createdAt: string
-  updatedAt: string
-  createdBy: string
+  created_by: string | null
+  created_at: string
+}
+
+export interface IPurchaseOrderWithSupplier extends IPurchaseOrder {
+  suppliers: {
+    name: string
+  }
 }

@@ -1,10 +1,10 @@
+import type { IBDARules } from './IBDARules'
+
 export interface ISupplier {
   id: string
-  code: string
   name: string
-  bdaRate: number
-  contactName: string | null
-  contactEmail: string | null
-  isActive: boolean
-  createdAt: string
+  bda_category: string
+  rebate_rules: IBDARules
+  target_amount: number | null
+  created_at: string
 }
