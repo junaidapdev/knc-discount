@@ -4,12 +4,14 @@ export const TAB_LABELS = {
   PURCHASES: 'Purchases',
   AUDIT: 'Accounts',
   ANALYTICS: 'Analytics',
+  SUPPLIERS: 'Suppliers',
 } as const
 
 export const ROUTES = {
   PURCHASES: '/',
   AUDIT: '/audit',
   ANALYTICS: '/analytics',
+  SUPPLIERS: '/suppliers',
 } as const
 
 export const PAGINATION = {

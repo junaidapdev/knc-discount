@@ -1,5 +1,5 @@
 import { Outlet, NavLink } from 'react-router-dom'
-import { ShoppingCart, ClipboardCheck, BarChart3 } from 'lucide-react'
+import { ShoppingCart, ClipboardCheck, BarChart3, Building2 } from 'lucide-react'
 import { ROUTES, TAB_LABELS, APP_NAME } from '../constants/appConstants'
 import { ROLES, type Role } from '../constants/roles'
 import { useAuth } from '../hooks/useAuth'
@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { to: ROUTES.PURCHASES, label: TAB_LABELS.PURCHASES, icon: ShoppingCart },
   { to: ROUTES.AUDIT, label: TAB_LABELS.AUDIT, icon: ClipboardCheck },
   { to: ROUTES.ANALYTICS, label: TAB_LABELS.ANALYTICS, icon: BarChart3 },
+  { to: ROUTES.SUPPLIERS, label: TAB_LABELS.SUPPLIERS, icon: Building2 },
 ]
 
 const ROLE_OPTIONS: { value: Role; label: string }[] = [

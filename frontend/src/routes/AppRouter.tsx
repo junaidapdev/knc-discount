@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import PurchasesPage from '../features/purchases/PurchasesPage'
 import AccountsPage from '../features/accounts/AccountsPage'
 import AnalyticsPage from '../features/analytics/AnalyticsPage'
+import SuppliersPage from '../features/suppliers/SuppliersPage'
 
 export default function AppRouter() {
   return (
@@ -15,6 +16,7 @@ export default function AppRouter() {
             <Route path={ROUTES.PURCHASES} element={<PurchasesPage />} />
             <Route path={ROUTES.AUDIT} element={<AccountsPage />} />
             <Route path={ROUTES.ANALYTICS} element={<AnalyticsPage />} />
+            <Route path={ROUTES.SUPPLIERS} element={<SuppliersPage />} />
             <Route path="*" element={<Navigate to={ROUTES.PURCHASES} replace />} />
           </Route>
         </Routes>

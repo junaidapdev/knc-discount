@@ -31,9 +31,14 @@ export const ERROR_MESSAGES = {
   POINTS_UPDATE_FAILED: 'Failed to update points ledger.',
   POINTS_DELETE_FAILED: 'Failed to delete points entry.',
 
+  // Suppliers
+  SUPPLIER_LOAD_FAILED: 'Failed to load suppliers.',
+  SUPPLIER_CREATE_FAILED: 'Failed to create supplier.',
+  SUPPLIER_UPDATE_FAILED: 'Failed to update supplier.',
+  SUPPLIER_DELETE_FAILED: 'Failed to delete supplier.',
+
   // Credit Note validation
   PERIOD_END_BEFORE_START: 'Period end date must be after start date.',
-  SUPPLIER_LOAD_FAILED: 'Failed to load suppliers.',
 
   // Validation
   FIELD_REQUIRED: 'This field is required.',
