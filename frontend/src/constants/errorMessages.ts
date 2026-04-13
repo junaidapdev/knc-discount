@@ -27,6 +27,10 @@ export const ERROR_MESSAGES = {
   ANALYTICS_LOAD_FAILED: 'Failed to load analytics data.',
   POINTS_UPDATE_FAILED: 'Failed to update points ledger.',
 
+  // Credit Note validation
+  PERIOD_END_BEFORE_START: 'Period end date must be after start date.',
+  SUPPLIER_LOAD_FAILED: 'Failed to load suppliers.',
+
   // Validation
   FIELD_REQUIRED: 'This field is required.',
   INVALID_DATE: 'Please enter a valid date.',

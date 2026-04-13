@@ -34,7 +34,17 @@ export const REBATE_STATUS = {
 } as const
 
 export const CREDIT_NOTE_STATUS = {
-  OPEN: 'open',
-  APPLIED: 'applied',
-  CANCELLED: 'cancelled',
+  PENDING: 'pending',
+  RECEIVED: 'received',
+  DISPUTED: 'disputed',
 } as const
+
+export type CreditNoteStatus = (typeof CREDIT_NOTE_STATUS)[keyof typeof CREDIT_NOTE_STATUS]
+
+export const CREDIT_NOTE_STATUS_LABELS: Record<CreditNoteStatus, string> = {
+  pending: 'Pending',
+  received: 'Received',
+  disputed: 'Disputed',
+} as const
+
+export const OVERDUE_THRESHOLD_DAYS = 60 as const
